@@ -18,9 +18,6 @@ function App() {
 
   function unsetUser() {
     localStorage.clear();
-    setUser({
-      token: null
-    });
   }
 
   return (

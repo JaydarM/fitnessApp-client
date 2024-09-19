@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+
+import EditWorkout from "./EditWorkout";
+import CompleteWorkout from "./CompleteWorkout";
+import DeleteWorkout from "./DeleteWorkout";
 
 function WorkoutCard({ workoutData, fetchWorkouts }) {
 
@@ -14,9 +18,9 @@ function WorkoutCard({ workoutData, fetchWorkouts }) {
 			        	<Card.Title>{workout.name}</Card.Title>
 			        	<Card.Subtitle>{workout.duration}</Card.Subtitle>
 			        	<Card.Text>{workout.status}</Card.Text>
-			        	<Button variant="primary">Edit</Button>
-			        	<Button variant="primary">Complete</Button>
-			        	<Button variant="primary">Delete</Button>
+			        	<CompleteWorkout workout={workout} fetchWorkouts={fetchWorkouts} />
+			        	<EditWorkout workout={workout} fetchWorkoutData={fetchWorkouts} />
+			        	<DeleteWorkout workout={workout} fetchWorkouts={fetchWorkouts} />
 			      	</Card.Body>
 			    </Card>
 			)

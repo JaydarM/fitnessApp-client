@@ -1,6 +1,9 @@
 import { useContext, useState, useEffect } from "react";
 import UserContext from "../context/UserContext";
 import WorkoutCard from "../components/WorkoutCard"
+import { Button } from "react-bootstrap";
+
+import AddWorkout from "../components/AddWorkout";
 
 function Workouts() {
 
@@ -33,7 +36,8 @@ function Workouts() {
 
 	return (
 		<>
-		<h1 className="my-5 text-center">Workouts</h1>
+		<h1 className="my-5">Workouts</h1>
+		<AddWorkout fetchWorkoutData={fetchWorkouts} />
 		{(hasWorkouts) ?
 			<WorkoutCard workoutData={workouts} fetchWorkouts={fetchWorkouts} />
 			:
